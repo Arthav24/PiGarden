@@ -38,5 +38,7 @@ def select(x):
 def pinvalue(p):
     select(p)
     time.sleep(1)
-    return (GPIO.input(26))
+    y=GPIO.input(26)
+    GPIO.cleanup()
+    return (y)
 
