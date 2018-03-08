@@ -5,7 +5,7 @@ def sync():
     print("syncing time with RTC")
     time.sleep(2)
     try:
-        os.system('sudo hwclock -w')
+        os.system('sudo hwclock -s')
     except RuntimeError:
         print("Failed to Sync time,Check RTC")
         
