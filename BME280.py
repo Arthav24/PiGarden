@@ -4,7 +4,7 @@ from ctypes import c_short
 from ctypes import c_byte
 from ctypes import c_ubyte
 
-#DEVICE = 0x76 # Default device I2C address
+DEVICE = 0x76 # Default device I2C address
 bus = smbus.SMBus(1) 
 def getShort(data, index):
   # return two bytes from data as a signed 16-bit value
@@ -140,14 +140,18 @@ def main():
 
   temperature,pressure,humidity = readBME280All()
 
-  print "Temperature : ", temperature, "C"
-  print "Pressure : ", pressure, "hPa"
-  print "Humidity : ", humidity, "%"
-  
+  #print "Temperature : ", temperature, "C"
+  #print "Pressure : ", pressure, "hPa"
+  #print "Humidity : ", humidity, "%"
+
 def airtemp():
-	return temperature
+    temperature,pressure,humidity = readBME280All()
+    return temperature
 def airhumi():
-	return humidity
+    temperature,pressure,humidity = readBME280All()
+    return humidity
 def airpress():
-	return pressure
+    temperature,pressure,humidity = readBME280All()
+    return pressure
+
 
